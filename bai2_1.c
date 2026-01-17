@@ -41,7 +41,12 @@ int main()
         {
             printf("Phuong trinh vo nghiem\n");
         }
-        // Kết thúc nếu a == 0
-        return 0;
     }
+    else
+    {
+        x = -b / a;
+        printf("Phuong trinh co nghiem x = %.2f\n", x);
+    }
+
+    return 0;
 }

@@ -61,7 +61,7 @@ int main()
 
     case 2:
     {
-        float a, b;
+        float a, b, x;
         printf("Nhap a: ");
         scanf("%f", &a);
         printf("Nhap b: ");

@@ -40,17 +40,29 @@ int main()
         if (diem >= 0 && diem <= 10)
         {
             if (diem >= 9)
+            {
                 printf("Hoc luc: Xuat sac\n");
+            }
             else if (diem >= 8)
+            {
                 printf("Hoc luc: Gioi\n");
+            }
             else if (diem >= 6.5)
+            {
                 printf("Hoc luc: Kha\n");
+            }
             else if (diem >= 5)
+            {
                 printf("Hoc luc: Trung binh\n");
+            }
             else if (diem >= 3.5)
+            {
                 printf("Hoc luc: Yeu\n");
+            }
             else
+            {
                 printf("Hoc luc: Kem\n");
+            }
         }
         else
         {
@@ -61,7 +73,7 @@ int main()
 
     case 2:
     {
-        float a, b, x;
+        float a, b;
         printf("Nhap a: ");
         scanf("%f", &a);
         printf("Nhap b: ");
@@ -70,9 +82,13 @@ int main()
         if (a == 0)
         {
             if (b == 0)
+            {
                 printf("Phuong trinh co vo so nghiem\n");
+            }
             else
+            {
                 printf("Phuong trinh vo nghiem\n");
+            }
         }
         else
         {
@@ -97,9 +113,13 @@ int main()
             if (b == 0)
             {
                 if (c == 0)
+                {
                     printf("Phuong trinh co vo so nghiem\n");
+                }
                 else
+                {
                     printf("Phuong trinh vo nghiem\n");
+                }
             }
             else
             {
@@ -112,7 +132,9 @@ int main()
             float delta = b * b - 4 * a * c;
 
             if (delta < 0)
+            {
                 printf("Phuong trinh vo nghiem\n");
+            }
             else if (delta == 0)
             {
                 float x = -b / (2 * a);
@@ -133,26 +155,45 @@ int main()
     case 4:
     {
         int soDien;
-        float tienDien = 0;
+        int tienDien;
 
         printf("Nhap so dien tieu thu (kWh): ");
         scanf("%d", &soDien);
 
         if (soDien <= 50)
+        {
             tienDien = soDien * 1678;
+        }
         else if (soDien <= 100)
+        {
             tienDien = 50 * 1678 + (soDien - 50) * 1734;
+        }
         else if (soDien <= 200)
+        {
             tienDien = 50 * 1678 + 50 * 1734 + (soDien - 100) * 2014;
-        else
+        }
+        else if (soDien <= 300)
+        {
             tienDien = 50 * 1678 + 50 * 1734 + 100 * 2014 + (soDien - 200) * 2536;
+        }
+        else if (soDien <= 400)
+        {
+            tienDien = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (soDien - 300) * 2834;
+        }
+        else
+        {
+            tienDien = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (soDien - 400) * 2927;
+        }
 
-        printf("So tien dien can dong: %.0f VND\n", tienDien);
+        printf("So tien dien can phai dong: %d VND\n", tienDien);
         break;
     }
 
     default:
+    {
         printf("Lua chon khong hop le!\n");
+        break;
+    }
     }
 
     return 0;

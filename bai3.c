@@ -1,23 +1,62 @@
 /******************************************************************************
- * Họ và tên: [ĐIỀN TÊN TẠI ĐÂY]
- * MSSV:      [ĐIỀN MSSV TẠI ĐÂY]
- * Lớp:       [ĐIỀN LỚP TẠI ĐÂY]
+ * Họ và tên: [Phan Thành Đạt]
+ * MSSV:      [PS48403]
+ * Lớp:       [COM108-CS21301]
  *****************************************************************************/
 
-//  BÀI 3: XÂY DỰNG CHƯƠNG TRÌNH TÍNH TIỀN ĐIỆN 
-//  Input: Nhập vào số điện tiêu thụ hàng tháng 
+//  BÀI 3: XÂY DỰNG CHƯƠNG TRÌNH TÍNH TIỀN ĐIỆN
+//  Input: Nhập vào số điện tiêu thụ hàng tháng
 //  Output: Hiển thị số tiền cần phải đóng
- 
+
+// bảng giá điện
+/*0 – 50 kWh: 1.678 đ/kWh
+
+51 – 100 kWh: 1.734 đ/kWh
+
+101 – 200 kWh: 2.014 đ/kWh
+
+201 - 300 kWh: 2.536 đ/kWh
+
+301 - 400 2834 đ/kWh
+
+401 trở lên 2.927 đ/kWh*/
+
 #include <stdio.h>
 
-int main(){
-    
-    // Khai báo biến
+int main()
+{
+    int soDien;
+    int tienDien;
 
+    printf("Nhap so dien tieu thu (kWh): ");
+    scanf("%d", &soDien);
 
-    // Nhập dữ liệu
+    if (soDien <= 50)
+    {
+        tienDien = soDien * 1678;
+    }
+    else if (soDien <= 100)
+    {
+        tienDien = 50 * 1678 + (soDien - 50) * 1734;
+    }
+    else if (soDien <= 200)
+    {
+        tienDien = 50 * 1678 + 50 * 1734 + (soDien - 100) * 2014;
+    }
+    else if (soDien <= 300)
+    {
+        tienDien = 50 * 1678 + 50 * 1734 + 100 * 2014 + (soDien - 200) * 2536;
+    }
+    else if (soDien <= 400)
+    {
+        tienDien = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (soDien - 300) * 2834;
+    }
+    else
+    {
+        tienDien = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (soDien - 400) * 2927;
+    }
 
+    printf("So tien dien can phai dong: %.0f VND\n", tienDien);
 
-    // Xử lý, tính toán VÀ Hiển thị kết quả
-
+    return 0;
 }
